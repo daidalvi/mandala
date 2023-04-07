@@ -1,10 +1,68 @@
 <html>
-  <head></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <style>
+      #tab1,
+      #tab2,
+      #tab3 {
+         text-align: center;
+         float: left;
+         padding: 5px 10px 5px 10px;
+         margin: 0px 2px 0px 2px;
+         cursor: pointer;
+         background: #ffffff;
+         border-radius: 5px 5px 0 0;
+         border: 1px solid #b00098;
+         border-bottom:  1px solid #ffffff;
+         color: #b00098;
+      }
+      #tab1.active, #tab2.active, #tab3.active{
+        background: #b00098;
+        color: #ffffff;
+      }
+      #tab1{
+        margin-left:10px;
+      }
+      #tab1:hover,
+      #tab2:hover,
+      #tab3:hover {
+         background: #ecade4;
+      }
+      #tab1Content,
+      #tab2Content,
+      #tab3Content {
+         width: auto;
+         padding: 20px;
+         border: 1px solid #b00098;
+         border-radius: 10px;
+         margin-top:-1px;
+      }
+      #tab2Content,
+      #tab3Content {
+         display: none;
+      }
+      #tabsWrapper{
+        margin:10px 0;
+      }
+      #container{
+        float:left;
+      }
+      #repsWrapper{
+        margin:10px;
+      }
+      .reps{
+        width: 50px;
+      }
+   </style>
+  </head>
   <body>
     <a id="download">Download</a>
-    <button onclick="generate()">Generate new mandala</button>
+    <button onclick="generate(true, true, true, true, true, true, true, true);">Generate new mandala</button>
     <button onclick="toggleColor()">Toggle color (and generate new mandala)</button>
-    <div id="container"></div>
+    <div id="container" ></div>
+    <div id="settings"></div>
     <script src="main.js"></script>
   </body>
 </html>
