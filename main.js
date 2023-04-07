@@ -16,6 +16,8 @@ var WIDTH=300,
     container=document.getElementById("container"),
     mandala="";
 
+var tabIndex=1;
+
 function generate(genR0, genR1, genT0, genT1, genAng0, genAng1, genColor0, genColor1){
     mandala=header;
     if(genR0){
@@ -193,7 +195,7 @@ function genHTML(){
     html += '</div><div style="clear:both"></div>';
 
     html += '<div id="tabsWrapper">';
-    html += '<div id="tab1" class="active" onClick="selectTab(1);">Tds</div>\
+    html += '<div id="tab1" onClick="selectTab(1);">Tds</div>\
     <div id="tab2" onClick="selectTab(2);">Angles</div>\
     <div id="tab3" onClick="selectTab(3);">Colors</div>';
 
@@ -233,12 +235,12 @@ function genHTML(){
     html += "<textarea oninput='parseAlls(this)' style='width:100%'>"+json+"</textarea>";
 
     document.getElementById("settings").innerHTML = html;
+    selectTab(tabIndex);
 }
 
-function selectTab(tabIndex) {
+function selectTab(tIndex) {
+    tabIndex = tIndex;
     for (var i=1; i<=3; i++){
-        console.log("tab" + i + "Content");
-        console.log(( i == tabIndex)? "block" : "none");
         document.getElementById("tab" + i + "Content").style.display = ( i == tabIndex)?
     "block" : "none";
         if (i == tabIndex){
